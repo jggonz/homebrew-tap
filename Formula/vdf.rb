@@ -1,12 +1,18 @@
 class Vdf < Formula
   desc "Visual disk free: df -h with colour-gradient bars, grouped by physical disk"
   homepage "https://github.com/jggonz/vdf"
-  version "1.0.0"
   license "MIT"
 
+  # One universal binary serves both Mac architectures.
   on_macos do
-    url "https://github.com/jggonz/vdf/releases/download/v1.0.0/vdf-1.0.0-macos-universal.tar.gz"
-    sha256 "d231846527c5dfcaf9483ff3ffda1ec9b29362d48d4849a45ec4f3ae3b14b34e"
+    on_arm do
+      url "https://github.com/jggonz/vdf/releases/download/v1.0.0/vdf-1.0.0-macos-universal.tar.gz"
+      sha256 "d231846527c5dfcaf9483ff3ffda1ec9b29362d48d4849a45ec4f3ae3b14b34e"
+    end
+    on_intel do
+      url "https://github.com/jggonz/vdf/releases/download/v1.0.0/vdf-1.0.0-macos-universal.tar.gz"
+      sha256 "d231846527c5dfcaf9483ff3ffda1ec9b29362d48d4849a45ec4f3ae3b14b34e"
+    end
   end
 
   on_linux do
